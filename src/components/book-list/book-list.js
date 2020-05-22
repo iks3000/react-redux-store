@@ -22,7 +22,7 @@ class BookList extends Component {
   render() {
     const { books } = this.props;
     return (
-      <ul className="book-list">
+      <ul className="book-list d-flex flex-wrap justify-content-start p-0">
         {
           books.map((bookItem) => {
             return (

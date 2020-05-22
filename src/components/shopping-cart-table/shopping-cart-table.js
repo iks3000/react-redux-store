@@ -5,7 +5,7 @@ const ShoppingCartTable = () => {
   return (
     <div className="shopping-cart-table">
       <h2>Your Order</h2>
-      <table className="table">
+      <table className="table m-0">
         <thead className="table-primary">
           <tr>
             <th>#</th>
