@@ -17,6 +17,14 @@
   padding-right: 1rem;
 }
 
+.shop-header a {
+  transition: all 0.3s;
+}
+
+.shop-header a:hover {
+  text-decoration: none;
+}
+
 .shop-header .shopping-cart .cart-icon {
   font-size: 2.2rem;
   color: cadetblue;
