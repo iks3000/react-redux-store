@@ -5,12 +5,12 @@ import './book-list-item.css';
 const BookListItem = ({ book }) => {
   const { title, author, price, coverImage } = book;
   return (
-    <div className="book-list-item bg-light rounded rounded shadow p-3">
+    <div className="book-list-item bg-light rounded shadow p-3">
       <div className="book-cover">
         <img src={coverImage} alt="cover"/>
       </div>
       <div className="book-details">
-        <a href="#" className="book-title">{title}</a>
+        <span className="book-title">{title}</span>
         <div className="book-author">{author}</div>
         <div className="book-price">${price}</div>
         <button className="btn btn-info add-to-cart shadow-none">Add to cart</button>
