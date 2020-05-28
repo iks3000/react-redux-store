@@ -9,7 +9,22 @@ import { fetchBooks } from '../../actions';
 import { compose } from '../../utils';
 import './book-list.css';
 
-class BookList extends Component {
+const BookList = ({ books }) => {
+  return (
+    <ul className="book-list d-flex flex-wrap justify-content-start p-0">
+      {
+        books.map((bookItem) => {
+          return (
+            <li key={bookItem.id}>
+              <BookListItem book={bookItem} />
+            </li>
+          )
+        })
+      }
+    </ul>
+  )
+};
+class BookListContainer extends Component {
 
   componentDidMount() {
     this.props.fetchBooks();
@@ -23,19 +38,7 @@ class BookList extends Component {
     if (error) {
       return <ErrorIndicator />
     }
-    return (
-      <ul className="book-list d-flex flex-wrap justify-content-start p-0">
-        {
-          books.map((bookItem) => {
-            return (
-              <li key={bookItem.id}>
-                <BookListItem book={bookItem} />
-              </li>
-            )
-          })
-        }
-      </ul>
-    )
+    return <BookList books={books} />
   }
 };
 
@@ -53,4 +56,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 export default compose(
   withBookstoreService(),
   connect(mapStateToProps, mapDispatchToProps)
-)(BookList);
+)(BookListContainer);
