@@ -8,6 +8,10 @@
   margin-left: 5px;
 }
 
+.shopping-cart-table .action {
+  width: 15%;
+}
+
 .table td, .table th {
   vertical-align: middle;
 }
