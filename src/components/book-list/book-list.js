@@ -5,7 +5,7 @@ import ErrorIndicator from '../error-indicator';
 import { connect } from 'react-redux';
 
 import { withBookstoreService } from '../hoc';
-import { booksLoaded, booksRequested, booksError } from '../../actions';
+import { fetchBooks } from '../../actions';
 import { compose } from '../../utils';
 import './book-list.css';
 
@@ -46,12 +46,7 @@ const mapStateToProps = ({ books, loading, error }) => {
 const mapDispatchToProps = (dispatch, ownProps) => {
   const { bookstoreService } = ownProps;
   return {
-    fetchBooks: () => {
-      dispatch(booksRequested());
-      bookstoreService.getBooks()
-        .then((data) => dispatch(booksLoaded(data)))
-        .catch((err) => dispatch(booksError(err)));
-    }
+    fetchBooks: fetchBooks(bookstoreService, dispatch)
   }
 }
 
