@@ -50,13 +50,13 @@ const mapStateToProps = ({bookList: { books, loading, error }}) => {
   return { books, loading, error }
 }
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-  const { bookstoreService } = ownProps;
+const mapDispatchToProps = (dispatch, { bookstoreService }) => {
+
   return bindActionCreators({
-    fetchBooks: () => fetchBooks(bookstoreService),
+    fetchBooks: fetchBooks(bookstoreService),
     onAddedToCart: bookAddedToCart
   }, dispatch);
-}
+};
 
 export default compose(
   withBookstoreService(),
