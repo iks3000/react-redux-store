@@ -5,7 +5,7 @@ import './shop-header.css';
 const ShopHeader = ({ numItem, total }) => {
   return (
     <header className="shop-header row">
-      <Link to="/react-redux-store">
+      <Link to="/react-redux-store/">
         <div className="logo text-dark">BookStore</div>
       </Link>
       <Link to="/cart">

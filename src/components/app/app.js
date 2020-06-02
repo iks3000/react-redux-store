@@ -10,7 +10,7 @@ const App = () => {
       <ShopHeader numItem={5} total={210} />
       <Switch>
         <Route exact
-          path="/react-redux-store"
+          path="/react-redux-store/"
           component={HomePage}
         />
         <Route
