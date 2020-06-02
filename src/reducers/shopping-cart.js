@@ -36,6 +36,7 @@ const updateOrder = (state, bookId, quantity) => {
   const item = cartItems[itemIndex];
 
   const newItem = updateCartItem(book, item, quantity);
+  console.log()
   return {
     orderTotal: 0,
     cartItems: updateCartItems(cartItems, newItem, itemIndex)
