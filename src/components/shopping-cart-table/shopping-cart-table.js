@@ -47,8 +47,11 @@ const ShoppingCartTable = ({ items, total, onIncrease, onDecrease, onDelete }) =
   }
 
   return (
-    <div className="shopping-cart-table">
-      <h2>Your Order</h2>
+    <div className="shopping-cart-table mb-3">
+      <div className="d-flex justify-content-between align-items-center">
+        <h2>Your Order</h2>
+        <SumTotal />
+      </div>
       <table className="table table-bordered m-0">
         <thead className="table-primary">
           <tr>
@@ -64,8 +67,6 @@ const ShoppingCartTable = ({ items, total, onIncrease, onDecrease, onDelete }) =
           { items.map(renderRow) }
         </tbody>
       </table>
-
-      <SumTotal />
     </div>
   )
 };
