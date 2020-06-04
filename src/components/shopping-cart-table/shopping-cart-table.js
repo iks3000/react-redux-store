@@ -35,9 +35,10 @@ const ShoppingCartTable = ({ items, total, onIncrease, onDecrease, onDelete }) =
   }
 
   const SumTotal = () => {
-    const sum = items
-      .map((el) => (el.count * el.total))
-      .reduce((accumulator, current) => accumulator + current, 0);
+    //const sum = items
+      // .map((el) => (el.count * el.total))
+      // .reduce((accumulator, current) => accumulator + current, 0);
+    const sum = items.reduce((acc, curr) => acc + curr.count * curr.total, 0);
 
     return (
       <div className="total">

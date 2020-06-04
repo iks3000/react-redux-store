@@ -35,6 +35,11 @@ const updateOrder = (state, bookId, quantity) => {
   const itemIndex = cartItems.findIndex(({ id }) => id === bookId);
   const item = cartItems[itemIndex];
 
+  const sum = cartItems
+    .map((el) => (el.count * el.total))
+    .reduce((accumulator, current) => accumulator + current, 0);
+    console.log('sum =',sum)
+
   const newItem = updateCartItem(book, item, quantity);
   return {
     orderTotal: 0,
