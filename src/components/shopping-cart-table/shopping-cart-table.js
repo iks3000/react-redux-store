@@ -4,6 +4,7 @@ import { bookAddedToCart, bookRemoveFromCart, allBooksRemoveFromCart } from '../
 import './shopping-cart-table.css';
 
 const ShoppingCartTable = ({ items, total, onIncrease, onDecrease, onDelete }) => {
+
   const renderRow = (item, idx) => {
     const { id, title, count, total } = item;
     return (
@@ -32,6 +33,19 @@ const ShoppingCartTable = ({ items, total, onIncrease, onDecrease, onDelete }) =
       </tr>
     );
   }
+
+  const SumTotal = () => {
+    const sum = items
+      .map((el) => (el.count * el.total))
+      .reduce((accumulator, current) => accumulator + current, 0);
+
+    return (
+      <div className="total">
+        Total: ${sum.toFixed(2)}
+      </div>
+    )
+  }
+
   return (
     <div className="shopping-cart-table">
       <h2>Your Order</h2>
@@ -51,9 +65,7 @@ const ShoppingCartTable = ({ items, total, onIncrease, onDecrease, onDelete }) =
         </tbody>
       </table>
 
-      <div className="total">
-        Total: ${total}
-      </div>
+      <SumTotal />
     </div>
   )
 };
